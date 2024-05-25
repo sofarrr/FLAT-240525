@@ -161,9 +161,9 @@ body {
         content: "";
         position: absolute;
         display: block;
+        inset: -6px 0 auto;
         width: 11px;
         height: 6px;
-        inset: -6px 0 auto;
         margin: auto;
         background-color: $colorBlue01;
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
