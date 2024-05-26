@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="240525 FLAT様技術課題">
     <meta property="og:site_name" content="240525 FLAT様技術課題">
-    <meta property="og:descripion" ctontent="">
+    <meta property="og:descripion" content="">
     <meta property="og:locale" content="ja_JP">
     <!-- /OGP -->
 
@@ -36,7 +36,7 @@
     <!-- /Load CSS -->
   </head>
   <body>
-    <header class="header l-flex">
+    <header class="header l-flex js-header">
       <div class="header-logo">
         <a href="#" class="header-logo__link l-flex">
           <figure class="header-logo__img"><img src="./img/logo.svg" alt=""></figure>
@@ -44,7 +44,7 @@
         </a>
       </div>
 
-      <nav class="header-nav l-flex" id="header-nav">
+      <nav class="header-nav l-flex js-nav" id="header-nav" aria-hidden="false">
         <ul class="header-nav__lst l-flex">
           <li class="header-nav__itm"><a href="#" class="header-nav__head">会社紹介</a></li>
           <li class="header-nav__itm"><a href="#" class="header-nav__head">お知らせ</a></li>
@@ -61,12 +61,12 @@
         </ul>
       </nav>
 
-      <button type="button" class="header-hamb" aria-controls="header-nav" aria-expanded="false" aria-label="メニューを開く">
-        <div class="header-hamb__line">
+      <button type="button" class="header-hamb js-hamb" aria-controls="header-nav" aria-expanded="false" aria-label="メニューを開く">
+        <span class="header-hamb__line">
           <span class="header-hamb__line--top"></span>
           <span class="header-hamb__line--mdl"></span>
           <span class="header-hamb__line--btm"></span>
-        </div>
+        </span>
       </button>
     </header>
 
