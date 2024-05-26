@@ -33,18 +33,14 @@ const toggleMenu = () => {
 
   // aria-label属性を切り替える
   const isMenu = hamb.getAttribute("aria-label") === "メニューを開く";
-  hamb.setAttribute(
-    "aria-label",
-    isMenu ? "メニューを閉じる" : "メニューを開く",
-  );
+  hamb.setAttribute("aria-label", isMenu ? "メニューを閉じる" : "メニューを開く",);
 
   // aria-hidden属性を切り替える
   const isHidden = nav.getAttribute("aria-hidden") === "true";
   nav.setAttribute("aria-hidden", isHidden ? "false" : "true");
 
   // bodyのoverflowを切り替える
-  document.body.style.overflow =
-    document.body.style.overflow === "hidden" ? "" : "hidden";
+  document.body.style.overflow = document.body.style.overflow === "hidden" ? "" : "hidden";
 };
 hamb.addEventListener("click", toggleMenu);
 
