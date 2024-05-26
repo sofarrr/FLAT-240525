@@ -1,2 +1,4 @@
 node_modules/
+.htaccess
+.htpasswd
 memo.txt

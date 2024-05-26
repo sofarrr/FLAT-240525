@@ -106,7 +106,7 @@ body {
   padding-left: 1.8125em;
   padding-right: 1.5em;
   background-color: $colorWhite;
-  // z-index: calc(infinity);
+  z-index: 999999;
   &-logo {
     z-index: 10;
     &__link {
@@ -201,9 +201,7 @@ body {
         border: 1px solid $colorBlue01;
         border-radius: 1.5em;
         background-color: $colorBlue01;
-        transition:
-          color 0.3s,
-          background-color 0.3s;
+        transition: color 0.3s, background-color 0.3s;
       }
     }
   }
@@ -253,9 +251,7 @@ body {
         translate: -50% 0;
         visibility: hidden;
         opacity: 0;
-        transition:
-          opacity 0.3s,
-          visibility 0.3s;
+        transition: opacity 0.3s, visibility 0.3s;
         &::before {
           content: "";
           position: absolute;
@@ -309,7 +305,21 @@ body {
 @media screen and (max-width: 991px) {
   .header {
     height: 4.375em;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      inset: 0 0 auto;
+      width: 100%;
+      height: 100%;
+      background-color: $colorBlue02;
+      opacity: 0;
+      transition: opacity .3s;
+    }
     &.is-open {
+      &::after {
+        opacity: 1;
+      }
       .header {
         &-logo {
           &__img {
@@ -341,8 +351,7 @@ body {
           inset: 0;
           width: 100%;
           height: 100%;
-          background: url("../img/logo_wh.svg") center center / 100% auto
-            no-repeat;
+          background: url("../img/logo_wh.svg") center center / 100% auto no-repeat;
           z-index: 1;
           opacity: 0;
           transition: opacity 0.3s;
@@ -356,16 +365,15 @@ body {
     &-nav {
       // display: none;
       position: fixed;
-      inset: 0;
+      inset: 4.375em 0 0;
       width: 100%;
-      height: 100vh;
-      height: 100dvh;
+      height: calc(100vh + 4.375em);
+      height: calc(100dvh + 4.375em);
       background-color: $colorBlue02;
+      overflow-x: scroll;
       visibility: hidden;
       opacity: 0;
-      transition:
-        opacity 0.3s,
-        visibility 0.3s;
+      transition: opacity 0.3s, visibility 0.3s;
       &.is-open {
         visibility: visible;
         opacity: 1;
@@ -375,8 +383,10 @@ body {
         flex-direction: column;
         align-items: start;
         width: 100%;
+        height: fit-content;
         margin-inline: auto;
-        padding-top: 6.0625em;
+        padding-top: 1.625em;
+        padding-bottom: 16em;
         padding-left: 1.59375em;
         padding-right: 1.59375em;
       }
@@ -444,8 +454,7 @@ body {
         display: block;
         margin-top: 0.3125em;
         color: $colorBlue01;
-        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
-          "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
         font-size: 1rem;
         text-align: center;
       }

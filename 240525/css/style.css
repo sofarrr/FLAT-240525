@@ -90,6 +90,7 @@ body {
   padding-left: 1.8125em;
   padding-right: 1.5em;
   background-color: #fff;
+  z-index: 999999;
 }
 .header-logo {
   z-index: 10;
@@ -263,6 +264,20 @@ body {
   .header {
     height: 4.375em;
   }
+  .header::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #004bb1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .header.is-open::after {
+    opacity: 1;
+  }
   .header.is-open .header-logo__img img {
     opacity: 0;
   }
@@ -296,11 +311,12 @@ body {
   }
   .header-nav {
     position: fixed;
-    inset: 0;
+    inset: 4.375em 0 0;
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100vh + 4.375em);
+    height: calc(100dvh + 4.375em);
     background-color: #004bb1;
+    overflow-x: scroll;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s, visibility 0.3s;
@@ -314,8 +330,11 @@ body {
     flex-direction: column;
     align-items: start;
     width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-inline: auto;
-    padding-top: 6.0625em;
+    padding-top: 1.625em;
+    padding-bottom: 16em;
     padding-left: 1.59375em;
     padding-right: 1.59375em;
   }
